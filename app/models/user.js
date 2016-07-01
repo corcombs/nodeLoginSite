@@ -27,17 +27,3 @@ userSchema.methods.validPassword = function(password) {
 // create the model for users and expose it to our app
 module.exports = mongoose.model('User', userSchema);
 
-var blogSchema = new Schema({
-  title:  String,
-  author: String,
-  body:   String,
-  comments: [{ body: String, date: Date }],
-  date: { type: Date, default: Date.now },
-  hidden: Boolean,
-  meta: {
-    votes: Number,
-    favs:  Number
-  }
-});
-
-var Blog = mongoose.model('Blog', blogSchema);
