@@ -48,6 +48,11 @@ module.exports = function(app, passport) {
         res.render('signup.ejs', { message: req.flash('signupMessage') });
     });
 
+    app.get('/profile', function(req, res) {
+
+        // render the page and pass in any flash data if it exists
+        res.send('hello');
+    });
 
 
     // =====================================
