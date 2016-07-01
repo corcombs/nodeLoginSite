@@ -51,7 +51,7 @@ module.exports = function(app, passport) {
     app.get('/profile', function(req, res) {
 
         // render the page and pass in any flash data if it exists
-        res.send('hello');
+        res.send('hello123');
     });
 
 
