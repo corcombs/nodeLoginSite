@@ -73,5 +73,16 @@ module.exports = function(app, passport) {
         failureRedirect : '/signup', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
+    app.get('/usersList', function(req, res) {
+        User.find({}, function(err, users) {
+            var userMap = {};
+
+            users.forEach(function(user) {
+                userMap[user._id] = user;
+            });
+
+        res.send(userMap);  
+        });
+    });
 };
 

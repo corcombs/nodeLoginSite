@@ -15,10 +15,10 @@ var userSchema = mongoose.Schema({
         birthday    : Date
         
     },
-    followInfo      :{
+    /*followInfo      :{
         followers   : [ObjectId],
         following   : [ObjectId]
-    }
+    }*/
 
 });
 
