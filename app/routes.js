@@ -1,6 +1,7 @@
 // app/routes.js
 module.exports = function(app, passport) {
     //redirect http to https
+    var User            = require('../app/models/user');
     app.all('*',function(req, res, next){
         if(req.secure){
             return next();
