@@ -2,12 +2,7 @@
 module.exports = function(app, passport) {
     //redirect http to https
     var User            = require('./models/user');
-    app.all('*',function(req, res, next){
-        if(req.secure){
-            return next();
-        };
-        res.redirect('https://'+req.host+req.url);
-    });
+    
     
     // =====================================
     // HOME PAGE (with login links) ========
@@ -47,12 +42,6 @@ module.exports = function(app, passport) {
 
         // render the page and pass in any flash data if it exists
         res.render('signup.ejs', { message: req.flash('signupMessage') });
-    });
-
-    app.get('/profile', function(req, res) {
-
-        // render the page and pass in any flash data if it exists
-        res.send('hello123');
     });
 
 
